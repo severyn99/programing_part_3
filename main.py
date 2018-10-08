@@ -37,8 +37,8 @@ if __name__ == "__main__":
 
     start = datetime.now().microsecond
     print("\nSorted by power:\n")
-    merge_sort_by_power(lighters_list)
-    for lighter in lighters_list:
+    result2 = merge_sort_by_power(lighters_list)
+    for lighter in result2:
         print(lighter)
     finish = datetime.now().microsecond
     print("Working time: " + Lighter.work_time(start, finish).__str__())

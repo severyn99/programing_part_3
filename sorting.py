@@ -3,11 +3,17 @@ from lighter import Lighter
 
 def selection_sort_by_lamps_number(lighter_list):
     for i in range(len(lighter_list)):
-        for j in range(i + 1, len(lighter_list)):
-            if lighter_list[i].lamps_number < lighter_list[j].lamps_number:
-                lighter_list[i], lighter_list[j] = lighter_list[j], lighter_list[i]
+        for j in range(i, len(lighter_list)):
+            if (j == i):
+                minVal = lighter_list[j]
+                minPos = j;
+            if lighter_list[j].lamps_number < minVal.lamps_number:
+                minVal = lighter_list[j]
+                minPos=j;
+                #lighter_list[i], lighter_list[j] = lighter_list[j], lighter_list[i]
                 Lighter.compare_count()
-                Lighter.change_count()
+        Lighter.change_count()
+        lighter_list[i], lighter_list[minPos] = lighter_list[minPos], lighter_list[i]        
     return lighter_list
 
 
